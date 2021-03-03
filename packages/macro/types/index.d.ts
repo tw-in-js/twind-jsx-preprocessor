@@ -1,10 +1,8 @@
 import 'react'
-import { Token, tw } from 'twind'
+import { Token } from 'twind'
 
 declare module 'react' {
   interface DOMAttributes<T> {
     tw?: Token
   }
 }
-
-export { tw }
