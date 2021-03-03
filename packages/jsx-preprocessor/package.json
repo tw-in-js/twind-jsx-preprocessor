@@ -7,7 +7,7 @@
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
 	"scripts": {
-		"start": "tsdx watch",
+		"dev": "tsdx watch",
 		"build": "tsdx build",
 		"test": "tsdx test",
 		"lint": "tsdx lint",
