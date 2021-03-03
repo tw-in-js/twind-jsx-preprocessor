@@ -58,13 +58,6 @@
   "optionalDependencies": {
     "@types/react": "*"
   },
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.com"
