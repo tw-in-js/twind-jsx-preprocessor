@@ -7,4 +7,4 @@ This package is only for creating a new integration/plugin with an existing buil
 ## Integrations
 
 - [Babel Macro](../macro/README.md)
-- Vite Plugin (coming soon!)
+- [Vite Plugin](../vite-plugin-jsx/README.md)
