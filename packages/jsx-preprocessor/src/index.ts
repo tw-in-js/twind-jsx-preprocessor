@@ -7,6 +7,9 @@ import {
 	getJsxAttributeValue,
 } from "./jsx-attribute"
 
+/**
+ * Mutatively(!) process an AST
+ */
 export function preprocessAst(ast: babel.types.Program | babel.types.File) {
 	traverse(ast, {
 		Program(program) {
@@ -69,6 +72,9 @@ export function preprocessAst(ast: babel.types.Program | babel.types.File) {
 	})
 }
 
+/**
+ * Accept source code and process it
+ */
 export async function preprocess(
 	code: string,
 ): Promise<babel.BabelFileResult | undefined> {
