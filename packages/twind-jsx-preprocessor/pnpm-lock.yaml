@@ -3,6 +3,8 @@ dependencies:
   '@babel/helper-annotate-as-pure': 7.12.13
   '@babel/traverse': 7.13.0
 devDependencies:
+  '@babel/plugin-syntax-jsx': 7.12.13_@babel+core@7.13.8
+  '@babel/plugin-syntax-typescript': 7.12.13_@babel+core@7.13.8
   husky: 5.1.3
   tsdx: 0.14.1
   tslib: 2.1.0
@@ -448,6 +450,15 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==
+  /@babel/plugin-syntax-jsx/7.12.13_@babel+core@7.13.8:
+    dependencies:
+      '@babel/core': 7.13.8
+      '@babel/helper-plugin-utils': 7.13.0
+    dev: true
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-d4HM23Q1K7oq/SLNmG6mRt85l2csmQ0cHRaxRXjKW0YFdEXqlZ5kzFQKH5Uc3rDJECgu+yCRgPkG04Mm98R/1g==
   /@babel/plugin-syntax-logical-assignment-operators/7.10.4_@babel+core@7.13.8:
     dependencies:
       '@babel/core': 7.13.8
@@ -511,6 +522,15 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-A81F9pDwyS7yM//KwbCSDqy3Uj4NMIurtplxphWxoYtNPov7cJsDkAFNNyVlIZ3jwGycVsurZ+LtOA8gZ376iQ==
+  /@babel/plugin-syntax-typescript/7.12.13_@babel+core@7.13.8:
+    dependencies:
+      '@babel/core': 7.13.8
+      '@babel/helper-plugin-utils': 7.13.0
+    dev: true
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-cHP3u1JiUiG2LFDKbXnwVad81GvfyIOmCD6HIEId6ojrY0Drfy2q1jw7BwN7dE84+kTnBjLkXoL3IEy/3JPu2w==
   /@babel/plugin-transform-arrow-functions/7.13.0_@babel+core@7.13.8:
     dependencies:
       '@babel/core': 7.13.8
@@ -6644,6 +6664,8 @@ packages:
 specifiers:
   '@babel/core': ^7.13.8
   '@babel/helper-annotate-as-pure': ^7.12.13
+  '@babel/plugin-syntax-jsx': ^7.12.13
+  '@babel/plugin-syntax-typescript': ^7.12.13
   '@babel/traverse': ^7.13.0
   husky: ^5.1.3
   tsdx: ^0.14.1

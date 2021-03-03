@@ -10,7 +10,15 @@ import {
 export async function preprocess(
 	code: string,
 ): Promise<babel.BabelFileResult | undefined> {
-	const root = await babel.parseAsync(code)
+	const root = await babel.parseAsync(code, {
+		configFile: false,
+		babelrc: false,
+		plugins: [
+			require.resolve("@babel/plugin-syntax-jsx"),
+			[require.resolve("@babel/plugin-syntax-typescript"), { isTSX: true }],
+		],
+	})
+
 	if (!root) return undefined
 
 	traverse(root, {
@@ -73,5 +81,11 @@ export async function preprocess(
 		},
 	})
 
-	return (await babel.transformFromAstAsync(root)) ?? undefined
+	const result = await babel.transformFromAstAsync(root, undefined, {
+		configFile: false,
+		babelrc: false,
+		ast: true,
+		sourceMaps: true,
+	})
+	return result ?? undefined
 }
