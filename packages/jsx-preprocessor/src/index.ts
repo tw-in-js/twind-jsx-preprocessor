@@ -7,21 +7,8 @@ import {
 	getJsxAttributeValue,
 } from "./jsx-attribute"
 
-export async function preprocess(
-	code: string,
-): Promise<babel.BabelFileResult | undefined> {
-	const root = await babel.parseAsync(code, {
-		configFile: false,
-		babelrc: false,
-		plugins: [
-			require.resolve("@babel/plugin-syntax-jsx"),
-			[require.resolve("@babel/plugin-syntax-typescript"), { isTSX: true }],
-		],
-	})
-
-	if (!root) return undefined
-
-	traverse(root, {
+export function preprocessAst(ast: babel.types.Program | babel.types.File) {
+	traverse(ast, {
 		Program(program) {
 			const localImportName = program.scope.generateUid("tw")
 
@@ -53,7 +40,7 @@ export async function preprocess(
 
 					path.node.attributes = path.node.attributes
 						// remove existing tw and className attributes
-						.filter((node) => {
+						.filter(node => {
 							const name = getJsxAttributeName(node)
 							return name !== "tw" && name !== "className"
 						})
@@ -80,6 +67,23 @@ export async function preprocess(
 			)
 		},
 	})
+}
+
+export async function preprocess(
+	code: string,
+): Promise<babel.BabelFileResult | undefined> {
+	const root = await babel.parseAsync(code, {
+		configFile: false,
+		babelrc: false,
+		plugins: [
+			require.resolve("@babel/plugin-syntax-jsx"),
+			[require.resolve("@babel/plugin-syntax-typescript"), { isTSX: true }],
+		],
+	})
+
+	if (!root) return undefined
+
+	preprocessAst(root)
 
 	const result = await babel.transformFromAstAsync(root, undefined, {
 		configFile: false,
