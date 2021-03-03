@@ -33,6 +33,7 @@
   "dependencies": {
     "@babel/core": "^7.12.10",
     "@babel/helper-annotate-as-pure": "^7.12.10",
+    "@twind/jsx-preprocessor": "*",
     "babel-plugin-macros": "^3.0.1"
   },
   "devDependencies": {
