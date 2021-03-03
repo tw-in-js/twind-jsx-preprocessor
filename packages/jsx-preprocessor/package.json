@@ -1,5 +1,5 @@
 {
-	"name": "twind-jsx-preprocessor",
+	"name": "@twind/jsx-preprocessor",
 	"author": "MapleLeaf",
 	"module": "dist/twind-jsx-preprocessor.esm.js",
 	"version": "0.1.0",
