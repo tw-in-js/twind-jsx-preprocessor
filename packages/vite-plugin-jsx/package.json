@@ -13,19 +13,18 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
     "dev": "yarn build --watch",
-    "test": "jest",
-    "test-watch": "jest --watchAll"
+    "test": "jest --passWithNoTests",
+    "test-watch": "yarn test --watchAll"
   },
   "dependencies": {
-    "@twind/jsx-preprocessor": "*"
+    "@twind/jsx-preprocessor": "*",
+    "tslib": "^2.1.0"
   },
   "peerDependencies": {
     "vite": ">=2",
     "twind": ">=0.11"
   },
   "devDependencies": {
-    "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
     "typescript": "^4.2.2",
     "vite": "^2.0.5"
   },

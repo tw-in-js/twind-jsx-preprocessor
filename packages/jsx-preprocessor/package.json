@@ -13,8 +13,8 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
     "dev": "yarn build --watch",
-    "test": "jest",
-    "test-watch": "jest --watchAll"
+    "test": "jest --passWithNoTests",
+    "test-watch": "yarn test --watchAll"
   },
   "dependencies": {
     "@babel/core": "^7.13.8",
