@@ -1,8 +1,19 @@
 {
   "name": "@twind/vite-plugin-jsx",
   "version": "0.0.0",
-  "author": "MapleLeaf",
   "license": "MIT",
+  "homepage": "https://github.com/tw-in-js/twind-jsx-preprocessor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tw-in-js/twind-jsx-preprocessor",
+    "directory": "packages/vite-plugin-jsx"
+  },
+  "bugs": "https://github.com/tw-in-js/twind-jsx-preprocessor/issues",
+  "changelog": "https://github.com/tw-in-js/twind-jsx-preprocessor/releases",
+  "author": {
+    "name": "MapleLeaf",
+    "url": "https://github.com/itsMapleLeaf"
+  },
   "module": "dist/vite-plugin-jsx.esm.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

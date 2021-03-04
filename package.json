@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "publish": "lerna publish",
+    "version": "npm run format"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
