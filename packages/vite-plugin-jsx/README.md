@@ -1,55 +1,30 @@
 # @twind/vite-plugin-jsx
 
-A vite plugin which adds JSX enhancements for [`twind`](https://github.com/tw-in-js/twind)
+A [Vite](https://vitejs.dev) plugin which adds JSX enhancements for [Twind](https://github.com/tw-in-js/twind)
 
-## `tw` prop
+## [Features](../../README.md#features)
 
-```js
-const Button = () => <button tw="bg-blue-500" />
+## Usage
 
-// ⬇⬇⬇⬇⬇⬇
+1. Install from npm:
 
-import { tw } from 'twind'
-const Button = () => <button className={tw`bg-blue-500`} />
-```
+   ```sh
+   npm install -D @twind/vite-plugin-jsx
+   ```
 
-More complex usage is supported:
+1. Add to the `plugins` section of your vite config:
 
-```js
-const Button = () => (
-  <button tw={['bg-blue-500', condition && 'text-red-500', { 'border-green-500': true }]} />
-)
+   ```js
+   import { defineConfig } from 'vite'
+   import twindJsx from '@twind/vite-plugin-jsx'
 
-// ⬇⬇⬇⬇⬇⬇
+   export default defineConfig({
+     // other config ...
+     plugins: [
+       // other plugins ...
+       twindJsx(),
+     ],
+   })
+   ```
 
-import { tw } from 'twind'
-
-const Button = () => (
-  <button
-    className={tw(['bg-blue-500', condition && 'text-red-500', { 'border-green-500': true }])}
-  />
-)
-```
-
-## Installation
-
-Install from npm:
-
-```sh
-npm install -D @twind/vite-plugin-jsx
-```
-
-Add to the `plugins` section of your vite config:
-
-```js
-import { defineConfig } from 'vite'
-import twindJsx from '@twind/vite-plugin-jsx'
-
-export default defineConfig({
-  // other config ...
-  plugins: [
-    // other plugins ...
-    twindJsx(),
-  ],
-})
-```
+And you're done!

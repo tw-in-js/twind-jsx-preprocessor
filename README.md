@@ -2,6 +2,74 @@
 
 Monorepo for adding JSX enhancements to [twind](https://twind.dev), including the `tw` prop, and various compile-time optimizations ✨
 
+## Integrations
+
+To enable the preprocessor, use one of these integrations:
+
+- [Babel Macro](../macro/README.md)
+- [Vite Plugin](../vite-plugin-jsx/README.md)
+
+## Features
+
+### `tw` Prop
+
+A convenient shorthand for `className={tw(...)}`
+
+```js
+// completely original example 😏
+const Notification = ({ title, message }) => (
+  <div tw="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+    <div tw="flex-shrink-0">
+      <img tw="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div tw="text-xl font-medium text-black">{title}</div>
+      <p tw="text-gray-500">{message}</p>
+    </div>
+  </div>
+)
+
+// compiles to:
+
+import { tw } from 'twind'
+
+const Notification = ({ title, message }) => (
+  <div
+    className={tw`p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4`}
+  >
+    <div className={tw`flex-shrink-0`}>
+      <img className={tw`h-12 w-12`} src="/img/logo.svg" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div className={tw`text-xl font-medium text-black`}>{title}</div>
+      <p className={tw`text-gray-500`}>{message}</p>
+    </div>
+  </div>
+)
+```
+
+Also works nicely with `css`, `apply`, and others
+
+```js
+import { apply } from 'twind'
+import { css } from 'twind/css'
+
+const buttonStyle = apply`
+	block p-3 w-full
+	font-medium text-left leading-none
+	transition
+	ring(2 inset transparent)
+	hover:(bg-green-100 text-green-900)
+	focus:ring-green-500
+`
+
+const Example = () => (
+  <section tw={css({ position: 'absolute', top: '137px' })}>
+    <button tw={buttonStyle}>Hi, twind!</button>
+  </section>
+)
+```
+
 ## Contribute
 
 Thanks for being willing to contribute!
