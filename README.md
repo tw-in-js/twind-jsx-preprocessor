@@ -6,8 +6,8 @@ Monorepo for adding JSX enhancements to [twind](https://twind.dev), including th
 
 To enable the preprocessor, use one of these integrations:
 
-- [Babel Macro](../macro/README.md)
-- [Vite Plugin](../vite-plugin-jsx/README.md)
+- [Babel Macro](./packages/macro/README.md)
+- [Vite Plugin](./packages/vite-plugin-jsx/README.md)
 
 ## Features
 
