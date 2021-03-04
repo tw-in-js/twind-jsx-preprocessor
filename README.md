@@ -1,5 +1,7 @@
 # Twind JSX Preprocessors
 
+Monorepo for adding JSX enhancements to [twind](https://twind.dev), including the `tw` prop, and various compile-time optimizations ✨
+
 ## Contribute
 
 Thanks for being willing to contribute!

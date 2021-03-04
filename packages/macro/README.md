@@ -1,6 +1,8 @@
 # @twind/macro
 
-Enables the use of the `tw` prop, for use with [`twind`](https://github.com/tw-in-js/twind)
+A babel macro which adds JSX enhancements for [`twind`](https://github.com/tw-in-js/twind)
+
+## `tw` prop
 
 ```js
 import '@twind/macro'

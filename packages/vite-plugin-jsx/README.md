@@ -1,6 +1,8 @@
 # @twind/vite-plugin-jsx
 
-Vite plugin for the `tw` prop, for use with [`twind`](https://github.com/tw-in-js/twind)
+A vite plugin which adds JSX enhancements for [`twind`](https://github.com/tw-in-js/twind)
+
+## `tw` prop
 
 ```js
 const Button = () => <button tw="bg-blue-500" />
