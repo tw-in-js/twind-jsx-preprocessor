@@ -1,6 +1,6 @@
 {
   "name": "@twind/jsx-preprocessor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "homepage": "https://github.com/tw-in-js/twind-jsx-preprocessor#readme",
   "repository": {
@@ -30,9 +30,9 @@
   "dependencies": {
     "@babel/core": "^7.13.8",
     "@babel/helper-annotate-as-pure": "^7.12.13",
-    "@babel/traverse": "^7.13.0",
     "@babel/plugin-syntax-jsx": "^7.12.13",
     "@babel/plugin-syntax-typescript": "^7.12.13",
+    "@babel/traverse": "^7.13.0",
     "tslib": "^2.1.0"
   },
   "devDependencies": {
