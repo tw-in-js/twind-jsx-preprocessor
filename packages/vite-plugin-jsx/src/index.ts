@@ -1,3 +1,4 @@
+/// <reference path="../types/index.d.ts" />
 import { preprocess } from '@twind/jsx-preprocessor'
 import type { Plugin } from 'vite'
 

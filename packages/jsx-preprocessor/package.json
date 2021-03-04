@@ -6,33 +6,30 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
-    "dev": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "build": "tsc --project ./tsconfig.build.json",
+    "dev": "yarn build --watch",
+    "test": "jest",
+    "test-watch": "jest --watchAll"
   },
   "dependencies": {
     "@babel/core": "^7.13.8",
     "@babel/helper-annotate-as-pure": "^7.12.13",
-    "@babel/traverse": "^7.13.0"
-  },
-  "devDependencies": {
+    "@babel/traverse": "^7.13.0",
     "@babel/plugin-syntax-jsx": "^7.12.13",
     "@babel/plugin-syntax-typescript": "^7.12.13",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.2.2",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {
     "twind": "^0.15.8"
   },
   "peerDependencies": {
     "twind": ">=0.11"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "engines": {
     "node": ">=14"
   }

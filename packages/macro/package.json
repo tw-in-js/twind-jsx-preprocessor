@@ -8,9 +8,9 @@
   "changelog": "https://github.com/tw-in-js/twind.macro/releases",
   "main": "dist/macro.js",
   "types": "types/index.d.ts",
+  "license": "MIT",
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "author": {
     "name": "MapleLeaf",
@@ -22,17 +22,13 @@
     "babel macro"
   ],
   "scripts": {
-    "build": "trash dist && tsc --project tsconfig.build.json",
-    "dev": "trash dist && tsc --project tsconfig.build.json --watch",
+    "build": "tsc --project ./tsconfig.build.json",
+    "dev": "yarn build --watch",
     "test": "jest",
-    "test-watch": "jest --watchAll",
-    "format": "prettier --write .",
-    "release": "npx np"
+    "test-watch": "jest --watchAll"
   },
-  "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/helper-annotate-as-pure": "^7.12.10",
+    "@babel/core": "^7.13.8",
     "@twind/jsx-preprocessor": "*",
     "babel-plugin-macros": "^3.0.1"
   },

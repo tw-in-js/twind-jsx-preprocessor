@@ -1,3 +1,4 @@
+/// <reference path="../types/index.d.ts" />
 import { preprocessAst } from '@twind/jsx-preprocessor'
 import { createMacro, MacroParams } from 'babel-plugin-macros'
 

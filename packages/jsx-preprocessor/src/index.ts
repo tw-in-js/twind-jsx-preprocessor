@@ -1,8 +1,8 @@
+/// <reference path="../types/react.d.ts" />
 import * as babel from '@babel/core'
 import annotateAsPure from '@babel/helper-annotate-as-pure'
 import traverse from '@babel/traverse'
 import { findJsxAttributeByName, getJsxAttributeName, getJsxAttributeValue } from './jsx-attribute'
-import './tw-prop-react'
 
 /**
  * Mutatively(!) process an AST
