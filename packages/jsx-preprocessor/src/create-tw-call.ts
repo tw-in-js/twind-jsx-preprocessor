@@ -1,10 +1,15 @@
 import { types } from '@babel/core'
 import { isTruthy } from './helpers'
 
-export function createTwCall(value: types.Expression) {
+export function createTwCall(
+  value: types.Expression,
+  twFnName: string,
+): types.CallExpression | types.TaggedTemplateExpression {
+  const twIdentifier = types.identifier(twFnName)
+
   if (types.isStringLiteral(value)) {
     return types.taggedTemplateExpression(
-      types.identifier('tw'),
+      twIdentifier,
       types.templateLiteral([types.templateElement({ raw: value.value })], []),
     )
   }
@@ -24,14 +29,14 @@ export function createTwCall(value: types.Expression) {
       ]
 
       return types.taggedTemplateExpression(
-        types.identifier('tw'),
+        types.identifier(twFnName),
         types.templateLiteral(constantParts, elements),
       )
     }
   }
 
-  // for complex calls, pass the expression to the tw function as-is
-  return types.callExpression(types.identifier('tw'), [value])
+  // for complex calls, pass the expression as-is
+  return types.callExpression(types.identifier(twFnName), [value])
 }
 
 function onlyContainsExpressions(nodes: types.Node[]): nodes is types.Expression[] {

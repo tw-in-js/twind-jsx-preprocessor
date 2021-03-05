@@ -10,7 +10,7 @@ import { findJsxAttributeByName, getJsxAttributeName, getJsxAttributeValue } fro
 export function preprocessAst(ast: babel.types.Node) {
   traverse(ast, {
     Program(program) {
-      const localImportName = program.scope.generateUid('tw')
+      const twFnName = program.scope.generateUid('tw')
 
       traverse(program.node, {
         JSXOpeningElement(path) {
@@ -21,7 +21,7 @@ export function preprocessAst(ast: babel.types.Node) {
           const twAttributeValue = getJsxAttributeValue(twAttribute)
           if (!twAttributeValue) return
 
-          const twCall = createTwCall(twAttributeValue)
+          const twCall = createTwCall(twAttributeValue, twFnName)
           annotateAsPure(twCall)
 
           const classAttribute = findJsxAttributeByName(path.node, 'className')
@@ -58,7 +58,7 @@ export function preprocessAst(ast: babel.types.Node) {
         babel.types.importDeclaration(
           [
             babel.types.importSpecifier(
-              babel.types.identifier(localImportName),
+              babel.types.identifier(twFnName),
               babel.types.identifier('tw'),
             ),
           ],
