@@ -1,6 +1,6 @@
 {
   "name": "@twind/macro",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "A babel macro for twind, adds support for tw prop in jsx",
   "homepage": "https://github.com/tw-in-js/twind-jsx-preprocessor#readme",
   "repository": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.13.8",
-    "@twind/jsx-preprocessor": "^0.1.2",
+    "@twind/jsx-preprocessor": "^1.0.0",
     "babel-plugin-macros": "^3.0.1",
     "tslib": "^2.1.0"
   },

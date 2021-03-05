@@ -13,11 +13,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - template string optimization ([ff55328](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/ff5532861878ff285fc277a6cad59ee3b4ecab68))
-
-## [0.1.2](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/@twind/jsx-preprocessor@0.1.1...@twind/jsx-preprocessor@0.1.2) (2021-03-04)
-
-**Note:** Version bump only for package @twind/jsx-preprocessor
-
-## 0.1.1 (2021-03-04)
-
-**Note:** Version bump only for package @twind/jsx-preprocessor
