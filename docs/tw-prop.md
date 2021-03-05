@@ -64,12 +64,13 @@ const Example = () => (
 
 For single element styles, consider making partial styles with [`apply`](https://twind.dev/docs/modules/twind.html#apply-function) and reusing them:
 
-```tsx
+```ts
 // components.ts
 import { apply } from 'twind'
 
 export const buttonStyle = apply`text-white rounded shadow p-3 bg-blue-600 hover:bg-blue-700`
-
+```
+```tsx
 // App.tsx
 import { buttonStyle } from './components'
 
@@ -107,7 +108,7 @@ export default function Button({ size = 'medium', color = 'blue', isLoading, chi
   `
   return (
     <button type="button" tw={buttonStyle} disabled={isLoading}>
-      {isLoading ? children : 'Loading...'}
+      {isLoading ? 'Loading...' : children}
     </button>
   )
 }
