@@ -23,9 +23,7 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "dev": "yarn build --watch",
-    "test": "jest --passWithNoTests",
-    "test-watch": "yarn test --watchAll"
+    "dev": "yarn build --watch"
   },
   "dependencies": {
     "@twind/jsx-preprocessor": "^1.0.0",
