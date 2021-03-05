@@ -38,7 +38,7 @@ const Notification = ({ title, message }) => (
 )
 ```
 
-Also works nicely with `css`, `apply`, [and whatever you can pass to `tw()`](https://twind.dev/docs/modules/twind.html#tw-function)
+Also works nicely with [`css`](https://twind.dev/docs/modules/twind_css.html), [`apply`](https://twind.dev/docs/modules/twind.html#apply-function), and [whatever you can pass to `tw()`](https://twind.dev/docs/modules/twind.html#tw-function)
 
 ```js
 import { apply } from 'twind'
@@ -62,10 +62,12 @@ const Example = () => (
 
 ## Creating components
 
-For single element styles, consider making partial styles with `apply` and reusing them:
+For single element styles, consider making partial styles with [`apply`](https://twind.dev/docs/modules/twind.html#apply-function) and reusing them:
 
 ```tsx
 // components.ts
+import { apply } from 'twind'
+
 export const buttonStyle = apply`text-white rounded shadow p-3 bg-blue-600 hover:bg-blue-700`
 
 // App.tsx
@@ -85,6 +87,7 @@ export default function App() {
 For more complex cases, our recommendation is to define explicit props for customizability. This avoids various caveats around css class ordering, precedence, implementation details, etc.
 
 ```tsx
+import { apply } from 'twind'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -116,7 +119,7 @@ One might want to create components where the style can be overridden via the `t
 
 ```tsx
 import { ReactNode, ComponentPropsWithoutRef } from 'react'
-import { Token, css } from 'twind'
+import { apply, css, Token } from 'twind'
 
 type Props = ComponentPropsWithoutRef<'button'> & {
   tw?: Token
