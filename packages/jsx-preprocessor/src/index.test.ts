@@ -52,7 +52,7 @@ test('className merging', async () => {
   `)
   expect(result?.code).toMatchInlineSnapshot(`
     "import { tw as _tw } from \\"twind\\";
-    <button className={\`\${\\"some-third-party-class\\"} \${/*#__PURE__*/_tw\`text-red-500\`}\`} />;"
+    <button className={\`\${\\"some-third-party-class\\" || \\"\\"} \${/*#__PURE__*/_tw\`text-red-500\`}\`} />;"
   `)
 })
 
@@ -98,7 +98,7 @@ test('component extension', async () => {
       tw,
       className,
       ...props
-    }) => <button type=\\"button\\" {...props} className={\`\${className} \${/*#__PURE__*/_tw(\`bg-blue-500 text-white \${tw}\`)}\`} />;"
+    }) => <button type=\\"button\\" {...props} className={\`\${className || \\"\\"} \${/*#__PURE__*/_tw(\`bg-blue-500 text-white \${tw}\`)}\`} />;"
   `)
 })
 

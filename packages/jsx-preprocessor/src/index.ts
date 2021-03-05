@@ -36,7 +36,20 @@ export function preprocessAst(ast: babel.types.Node) {
                   babel.types.templateElement({ raw: ' ' }),
                   babel.types.templateElement({ raw: '' }),
                 ],
-                [classAttributeValue, twCall],
+                [
+                  // generate `${className || ''}`,
+                  // so that we don't get `undefined` in the class string
+                  // when the class name is undefined at runtime
+                  //
+                  // this can still be optimized though, e.g. in the case of a literal string,
+                  // but I don't see that being common enough to account for
+                  babel.types.logicalExpression(
+                    '||',
+                    classAttributeValue,
+                    babel.types.stringLiteral(''),
+                  ),
+                  twCall,
+                ],
               )
             : twCall
 
