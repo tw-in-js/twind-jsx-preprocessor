@@ -2,12 +2,13 @@
 import * as babel from '@babel/core'
 import annotateAsPure from '@babel/helper-annotate-as-pure'
 import traverse from '@babel/traverse'
+import { createTwCall } from './create-tw-call'
 import { findJsxAttributeByName, getJsxAttributeName, getJsxAttributeValue } from './jsx-attribute'
 
 /**
  * Mutatively(!) process an AST
  */
-export function preprocessAst(ast: babel.types.Program | babel.types.File) {
+export function preprocessAst(ast: babel.types.Node) {
   traverse(ast, {
     Program(program) {
       const localImportName = program.scope.generateUid('tw')
@@ -18,9 +19,7 @@ export function preprocessAst(ast: babel.types.Program | babel.types.File) {
           const twAttributeValue = getJsxAttributeValue(twAttribute)
           if (!twAttributeValue) return
 
-          const twCall = babel.types.callExpression(babel.types.identifier(localImportName), [
-            twAttributeValue,
-          ])
+          const twCall = createTwCall(twAttributeValue)
           annotateAsPure(twCall)
 
           const classAttribute = findJsxAttributeByName(path.node, 'className')
