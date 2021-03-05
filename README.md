@@ -2,7 +2,7 @@
 
 Monorepo for adding JSX enhancements to [Twind](https://twind.dev), including the `tw` prop, and various compile-time optimizations ✨
 
-## Integrations
+## Install
 
 To enable the preprocessor, use one of these integrations:
 
