@@ -14,6 +14,10 @@ export function createTwCall(
     )
   }
 
+  if (types.isTemplateLiteral(value)) {
+    return types.taggedTemplateExpression(twIdentifier, value)
+  }
+
   if (types.isArrayExpression(value)) {
     // an element will be null in the case of holes in the array, e.g. [a,,c]
     // i believe we can just ignore those

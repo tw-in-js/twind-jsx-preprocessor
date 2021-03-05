@@ -98,7 +98,7 @@ test('component extension', async () => {
       tw,
       className,
       ...props
-    }) => <button type=\\"button\\" {...props} className={\`\${className || \\"\\"} \${/*#__PURE__*/_tw(\`bg-blue-500 text-white \${tw}\`)}\`} />;"
+    }) => <button type=\\"button\\" {...props} className={\`\${className || \\"\\"} \${/*#__PURE__*/_tw\`bg-blue-500 text-white \${tw}\`}\`} />;"
   `)
 })
 
