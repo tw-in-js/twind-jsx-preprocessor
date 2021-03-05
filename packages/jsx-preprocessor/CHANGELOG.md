@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v1.0.0...v1.0.1) (2021-03-05)
+
+### Bug Fixes
+
+- optimized template literal calls ([1a89088](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/1a89088c3c2d504d12530206dfe16501aacd20f6))
+- prevent `undefined` in class name strings ([b3d4cb7](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/b3d4cb7be197ea6f1ab8042ed7cd50f7a5dd57df))
+
 # 1.0.0 (2021-03-05)
 
 ### Bug Fixes
