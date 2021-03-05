@@ -5,6 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 1.0.0 (2021-03-05)
 
+### BREAKING CHANGES
+
+- only transform on host elements ([549cac9](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/549cac910747f19b554d480dbd395f8ba0dca2e8))
+
 ### Bug Fixes
 
 - only add twind import if there were transformations ([320f583](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/320f583e877036b9e787e5d0725cda4cd1acd33b))
@@ -13,7 +17,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - template string optimization ([ff55328](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/ff5532861878ff285fc277a6cad59ee3b4ecab68))
-
-### Reverts
-
-- Revert "v1.0.0" ([a388555](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/a388555314d1b5b95e7cf8536c9e3a332fab437d))
