@@ -12,6 +12,8 @@ export function preprocessAst(ast: babel.types.Node) {
     Program(program) {
       const twFnName = program.scope.generateUid('tw')
 
+      let hasTransformed = false
+
       traverse(program.node, {
         JSXOpeningElement(path) {
           // only transform on host elements
@@ -51,20 +53,24 @@ export function preprocessAst(ast: babel.types.Node) {
                 babel.types.jsxExpressionContainer(newAttributeValue),
               ),
             )
+
+          hasTransformed = true
         },
       })
 
-      program.node.body.unshift(
-        babel.types.importDeclaration(
-          [
-            babel.types.importSpecifier(
-              babel.types.identifier(twFnName),
-              babel.types.identifier('tw'),
-            ),
-          ],
-          babel.types.stringLiteral('twind'),
-        ),
-      )
+      if (hasTransformed) {
+        program.node.body.unshift(
+          babel.types.importDeclaration(
+            [
+              babel.types.importSpecifier(
+                babel.types.identifier(twFnName),
+                babel.types.identifier('tw'),
+              ),
+            ],
+            babel.types.stringLiteral('twind'),
+          ),
+        )
+      }
     },
   })
 }

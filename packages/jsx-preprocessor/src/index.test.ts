@@ -101,3 +101,8 @@ test('component extension', async () => {
     }) => <button type=\\"button\\" {...props} className={\`\${className} \${/*#__PURE__*/_tw(\`bg-blue-500 text-white \${tw}\`)}\`} />;"
   `)
 })
+
+test('lazy import - only import if there were transformations', async () => {
+  const result = await preprocess(`<button />`)
+  expect(result?.code).toMatchInlineSnapshot(`"<button />;"`)
+})
