@@ -1,6 +1,8 @@
 # Twind JSX Preprocessors
 
-Monorepo for adding JSX enhancements to [Twind](https://twind.dev), including the `tw` prop, and various compile-time optimizations ✨
+Monorepo for adding JSX enhancements to [Twind](https://twind.dev), including the `tw` prop, and various compile-time optimizations ✨🖌
+
+![TW Prop Preview](./tw-prop-preview.png)
 
 ## Install
 
