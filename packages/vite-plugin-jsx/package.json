@@ -23,7 +23,8 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "dev": "yarn build --watch"
+    "dev": "yarn build --watch",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@twind/jsx-preprocessor": "^2.0.1",

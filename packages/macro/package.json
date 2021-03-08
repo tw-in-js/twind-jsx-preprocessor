@@ -27,7 +27,8 @@
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "dev": "yarn build --watch"
+    "dev": "yarn build --watch",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@babel/core": "^7.13.8",
