@@ -56,7 +56,7 @@ test('className merging', async () => {
   `)
 })
 
-test('only transforms on host elements', async () => {
+test('transforms on host elements and components', async () => {
   const result = await preprocess(`
     <>
       <button tw="text-red-500" />
@@ -74,8 +74,8 @@ test('only transforms on host elements', async () => {
           <p className={/*#__PURE__*/_tw\`text-red-500\`} />
           <x-custom className={/*#__PURE__*/_tw\`text-red-500\`} />
           <foreignObject className={/*#__PURE__*/_tw\`text-red-500\`} />
-          <Button tw=\\"text-red-500\\" />
-          <motion.div tw=\\"text-red-500\\" />
+          <Button className={/*#__PURE__*/_tw\`text-red-500\`} />
+          <motion.div className={/*#__PURE__*/_tw\`text-red-500\`} />
         </>;"
   `)
 })

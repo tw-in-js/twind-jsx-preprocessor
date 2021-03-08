@@ -1,10 +1,6 @@
 # `tw` Prop
 
-The `tw` prop is a convenient shorthand for `className={tw(...)}`
-
-> **Note**: The prop is only supported on host elements (p, foriegnObject, x-custom-element). For components, the prop is left as-is, and the component receives the `tw` string as a prop.
-
-Here's an example, shamelessly borrowed from the TailwindCSS docs 😏
+The `tw` prop is a convenient shorthand for `className={tw(...)}`. Here's an example, shamelessly borrowed from the TailwindCSS docs 😏
 
 ```js
 const Notification = ({ title, message }) => (
@@ -70,6 +66,7 @@ import { apply } from 'twind'
 
 export const buttonStyle = apply`text-white rounded shadow p-3 bg-blue-600 hover:bg-blue-700`
 ```
+
 ```tsx
 // App.tsx
 import { buttonStyle } from './components'
@@ -89,7 +86,7 @@ For more complex cases, our recommendation is to define explicit props for custo
 
 ```tsx
 import { apply } from 'twind'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type Props = {
   size?: 'medium' | 'large'
@@ -119,23 +116,26 @@ export default function Button({ size = 'medium', color = 'blue', isLoading, chi
 One might want to create components where the style can be overridden via the `tw` prop. Here's how to do that:
 
 ```tsx
-import { ReactNode, ComponentPropsWithoutRef } from 'react'
-import { apply, css, Token } from 'twind'
+import type { ReactNode, ComponentPropsWithoutRef } from 'react'
+import { apply } from 'twind'
 
-type Props = ComponentPropsWithoutRef<'button'> & {
-  tw?: Token
-}
+type Props = ComponentPropsWithoutRef<'button'>
 
-export default function Button({ tw, className, ...props }: Props) {
+export default function Button({ className, ...props }: Props) {
   return (
     <button
       type="button"
-      tw={apply`text-white rounded shadow p-3 bg-blue-600 hover:bg-blue-700 ${tw}`}
+      tw={apply`text-white rounded shadow p-3 bg-blue-600 hover:bg-blue-700`}
       className={className}
       {...props}
     />
   )
 }
+```
+
+```tsx
+import { css } from 'twind'
+import Button from './Button'
 
 const example = (
   <>

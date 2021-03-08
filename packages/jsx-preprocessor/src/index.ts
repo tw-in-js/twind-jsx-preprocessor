@@ -16,9 +16,6 @@ export function preprocessAst(ast: babel.types.Node) {
 
       traverse(program.node, {
         JSXOpeningElement(path) {
-          // only transform on host elements
-          if (!isHostElementName(path.node.name)) return
-
           const twAttribute = findJsxAttributeByName(path.node, 'tw')
           const twAttributeValue = getJsxAttributeValue(twAttribute)
           if (!twAttributeValue) return
@@ -112,14 +109,4 @@ export async function preprocess(code: string): Promise<babel.BabelFileResult | 
     sourceMaps: true,
   })
   return result ?? undefined
-}
-
-/**
- * Returns true if the name is that of a JSX host element,
- * e.g. div, p, x-custom-element, foreignObject
- * and NOT a component
- */
-function isHostElementName(nameNode: babel.types.Node) {
-  const hostElementRegex = /^[a-z][a-zA-Z\-]*$/
-  return babel.types.isJSXIdentifier(nameNode) && hostElementRegex.test(nameNode.name)
 }
