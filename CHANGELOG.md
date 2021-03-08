@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v1.0.1...v2.0.0) (2021-03-08)
+
+- feat!: also transform to className on components ([94ee419](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/94ee4190077742a2fa54084240226f8ea2ccd324))
+
+### BREAKING CHANGES
+
+- I made a whole issue on this, but after some usage in practice, I believe transforming on all elements is the better DX. Here's why:
+
+* In components, I had to write out logic for receiving both tw _and_ className, and it's a lot simpler (and twind-agnostic in some cases) to only receive className
+* This makes it easier to use with third-party libraries, especially with unstyled components, and with any component that accepts className (many of them!)
+* Adding on the previous point, the mismatch of having to think about whether I can use `tw=` vs. `className=` depending on what tag I'm using, I ended up making more mistakes in the middle of that, than if I could just use `tw` everywhere
+
+So, for migration, your components will _not_ receive a `tw` prop, but instead, will only receive `className` in all cases. [See the updated docs](https://github.com/tw-in-js/twind-jsx-preprocessor/blob/main/docs/tw-prop.md#tw-overrides) for how you should write overridable components
+
+Hopefully this should be a small breaking change, and that this should make the prop nicer to use in the future!
+
 ## [1.0.1](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v1.0.0...v1.0.1) (2021-03-05)
 
 ### Bug Fixes
