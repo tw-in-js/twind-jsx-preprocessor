@@ -1,6 +1,6 @@
 {
   "name": "@twind/vite-plugin-jsx",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "homepage": "https://github.com/tw-in-js/twind-jsx-preprocessor#readme",
   "repository": {
@@ -26,7 +26,7 @@
     "dev": "yarn build --watch"
   },
   "dependencies": {
-    "@twind/jsx-preprocessor": "^2.0.0",
+    "@twind/jsx-preprocessor": "^2.0.1",
     "tslib": "^2.1.0"
   },
   "peerDependencies": {

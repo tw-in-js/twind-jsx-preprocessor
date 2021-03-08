@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v2.0.0...v2.0.1) (2021-03-08)
+
+### Bug Fixes
+
+- add back reference to react tw prop types ([1deafbc](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/1deafbc4707131b44d940a5858f178cf81399986))
+
 # [2.0.0](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v1.0.1...v2.0.0) (2021-03-08)
 
 - feat!: also transform to className on components ([94ee419](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/94ee4190077742a2fa54084240226f8ea2ccd324))
