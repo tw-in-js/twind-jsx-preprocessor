@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v2.0.3...v2.0.4) (2021-03-13)
+
+### Bug Fixes
+
+- work with babel tagged template transform ([6d97d21](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/6d97d217496fa3a73a37b284ff877b2ddf1af8c8))
+
 ## [2.0.3](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v2.0.2...v2.0.3) (2021-03-08)
 
 **Note:** Version bump only for package @twind/macro
