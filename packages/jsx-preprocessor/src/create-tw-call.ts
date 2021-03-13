@@ -10,7 +10,10 @@ export function createTwCall(
   if (types.isStringLiteral(value)) {
     return types.taggedTemplateExpression(
       twIdentifier,
-      types.templateLiteral([types.templateElement({ raw: value.value })], []),
+      types.templateLiteral(
+        [types.templateElement({ raw: value.value, cooked: value.value }, true)],
+        [],
+      ),
     )
   }
 
@@ -27,9 +30,11 @@ export function createTwCall(
     // it's probably possible to do, but likely rare in practice
     if (onlyContainsExpressions(elements)) {
       const constantParts = [
-        types.templateElement({ raw: '' }),
-        ...Array.from({ length: elements.length - 1 }, () => types.templateElement({ raw: ' ' })),
-        types.templateElement({ raw: '' }),
+        types.templateElement({ raw: '', cooked: '' }, true),
+        ...Array.from({ length: elements.length - 1 }, () =>
+          types.templateElement({ raw: ' ', cooked: ' ' }, true),
+        ),
+        types.templateElement({ raw: '', cooked: '' }, true),
       ]
 
       return types.taggedTemplateExpression(
