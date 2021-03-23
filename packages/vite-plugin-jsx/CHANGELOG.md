@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v2.0.4...v2.1.0) (2021-03-23)
+
+### Bug Fixes
+
+- pass filename to preprocess, fixes error with source maps ([1f05ad1](https://github.com/tw-in-js/twind-jsx-preprocessor/commit/1f05ad16fba65bcf5532a294b046f3717f7a5e8a))
+
 ## [2.0.4](https://github.com/tw-in-js/twind-jsx-preprocessor/compare/v2.0.3...v2.0.4) (2021-03-13)
 
 ### Bug Fixes
