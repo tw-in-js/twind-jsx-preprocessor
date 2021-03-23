@@ -10,7 +10,7 @@ export default function twindJsx(): Plugin {
     enforce: 'pre',
     async transform(source, filename) {
       if (jsxFileRegex.test(filename) && !filename.includes('node_modules')) {
-        const result = await preprocess(source)
+        const result = await preprocess(source, { filename })
         if (result) {
           return { code: result.code ?? undefined, map: result.map }
         }
