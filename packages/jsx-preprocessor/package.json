@@ -37,7 +37,7 @@
     "tslib": "^2.1.0"
   },
   "devDependencies": {
-    "twind": "^0.15.10"
+    "twind": "^0.16.8"
   },
   "peerDependencies": {
     "twind": ">=0.11"
