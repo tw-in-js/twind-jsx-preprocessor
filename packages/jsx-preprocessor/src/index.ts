@@ -7,6 +7,8 @@ import { findJsxAttributeByName, getJsxAttributeName, getJsxAttributeValue } fro
 
 /**
  * Mutatively(!) process an AST
+ *
+ * @param ast A babel AST
  */
 export function preprocessAst(ast: babel.types.Node) {
   traverse(ast, {
@@ -86,13 +88,25 @@ export function preprocessAst(ast: babel.types.Node) {
   })
 }
 
+export type PreprocessOptions = {
+  /** The path of the file being transformed. **This is needed if using source maps** */
+  filename?: string
+}
+
 /**
  * Accept source code and process it
  */
-export async function preprocess(code: string): Promise<babel.BabelFileResult | undefined> {
+export async function preprocess(
+  code: string,
+  { filename }: PreprocessOptions = {},
+): Promise<babel.BabelFileResult | undefined> {
   const root = await babel.parseAsync(code, {
     configFile: false,
     babelrc: false,
+    sourceMaps: true,
+    parserOpts: {
+      sourceFilename: filename,
+    },
     plugins: [
       require.resolve('@babel/plugin-syntax-jsx'),
       [require.resolve('@babel/plugin-syntax-typescript'), { isTSX: true }],
@@ -103,11 +117,12 @@ export async function preprocess(code: string): Promise<babel.BabelFileResult | 
 
   preprocessAst(root)
 
-  const result = await babel.transformFromAstAsync(root, undefined, {
+  const result = await babel.transformFromAstAsync(root, code, {
     configFile: false,
     babelrc: false,
     ast: true,
     sourceMaps: true,
   })
+
   return result ?? undefined
 }
