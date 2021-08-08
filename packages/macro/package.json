@@ -14,7 +14,8 @@
   "types": "types/index.d.ts",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "author": {
     "name": "MapleLeaf",
